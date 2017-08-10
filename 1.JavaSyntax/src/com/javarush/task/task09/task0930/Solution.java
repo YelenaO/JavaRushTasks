@@ -27,8 +27,28 @@ public class Solution {
     }
 
     public static void sort(String[] array) {
-        for(int i = 0; i < array.length; i++) {
 
+        for (int i = array.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (isNumber(array[i]) ) {
+                    if (isNumber(array[j])){
+                        if (isGreaterThan( array[j] , array[i])) {
+                            String temp = array[i];
+                            array[i] = array[j];
+                            array[j] = temp;
+                        }
+                    }
+                }
+                else{
+                    if (!isNumber(array[j])){
+                        if ( isGreaterThan( array[j].toLowerCase() , array[i].toLowerCase() ) ){
+                            String  temp = array[i];
+                            array[i] = array[j];
+                            array[j] = temp;
+                        }
+                    }
+                }
+            }
         }
         //напишите тут ваш код
     }
