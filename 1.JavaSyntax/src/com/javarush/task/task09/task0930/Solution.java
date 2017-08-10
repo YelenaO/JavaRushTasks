@@ -27,7 +27,7 @@ public class Solution {
     }
 
     public static void sort(String[] array) {
-        for(int i = 0; i < array.length(); i++) {
+        for(int i = 0; i < array.length; i++) {
 
         }
         //напишите тут ваш код
