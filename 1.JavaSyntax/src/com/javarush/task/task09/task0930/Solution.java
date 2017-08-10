@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 /* 
 Задача по алгоритмам
+
 */
 
 public class Solution {
@@ -28,28 +29,29 @@ public class Solution {
 
     public static void sort(String[] array) {
 
-        for (int i = array.length - 1; i > 0; i--) {
-            for (int j = 0; j < i; j++) {
-                if (isNumber(array[i]) ) {
-                    if (isNumber(array[j])){
-                        if (isGreaterThan( array[j] , array[i])) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (isNumber(array[i])) {
+                    if (isNumber(array[j])) {
+                        if (Integer.parseInt(array[j]) > Integer.parseInt(array[i])) {
                             String temp = array[i];
                             array[i] = array[j];
                             array[j] = temp;
                         }
                     }
                 }
-                else{
-                    if (!isNumber(array[j])){
-                        if ( isGreaterThan( array[j].toLowerCase() , array[i].toLowerCase() ) ){
-                            String  temp = array[i];
-                            array[i] = array[j];
-                            array[j] = temp;
+                else {
+                    if (!isNumber(array[j])) {
+                        if (isGreaterThan(array[i].toLowerCase(), array[j].toLowerCase())) {
+                            String temp = array[j];
+                            array[j] = array[i];
+                            array[i] = temp;
                         }
                     }
                 }
             }
         }
+
         //напишите тут ваш код
     }
 
